@@ -13,4 +13,3 @@ while que:
     res.append(str(que.pop(idx)))
 
 print("<", ", ".join(res), ">", sep="")
-
