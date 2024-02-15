@@ -1,4 +1,5 @@
 # 1. 오류
+
 '''
 n, m = map(int, input().split())
 
