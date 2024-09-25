@@ -1,13 +1,17 @@
-n, k = map(int, input().split())
-li = list(map(int, input().split()))
+import sys
+input = sys.stdin.readline
 
-for i in range(n - 1, 0, -1):
-   for j in range(i):
-      if li[j] > li[j + 1]:
-         li[j], li[j + 1] = li[j + 1], li[j]
-         k -= 1
-         if k == 0:
-            print(f'{li[j]} {li[j + 1]}')
-            exit()
+n = int(input())
+lst = []
 
-print(-1)
+for i in range(n):
+   lst.append((int(input()), i))
+
+max = 0
+sorted_lst = sorted(lst)
+
+for i in range(n):
+   if max < sorted_lst[i][1] - i:
+      max = sorted_lst[i][1] - i
+
+print(max + 1)
